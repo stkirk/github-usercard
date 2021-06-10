@@ -57,7 +57,21 @@ const followersArray = [];
       </div>
     </div>
 */
-
+function cardMaker(object) {
+  //create HTML elements
+  const card = document.createElement("div");
+  const image = document.createElement("img");
+  const cardInfo = document.createElement("div");
+  const name = document.createElement("h3");
+  const username = document.createElement("p");
+  const location = document.createElement("p");
+  const profile = document.createElement("p");
+  const gitHubLink = document.createElement("a");
+  const followers = document.createElement("p");
+  const following = document.createElement("p");
+  const bio = document.createElement("p");
+  //create the markup hierarchy
+}
 /*
   List of LS Instructors Github username's:
     tetondan
