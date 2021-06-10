@@ -7,7 +7,7 @@ import axios from "axios";
 axios
   .get("https://api.github.com/users/stkirk")
   .then((res) => {
-    console.log("RESPONSE DATA", res.data);
+    console.log("res.data", res.data);
   })
   .catch((err) => {
     console.log("ERROR");
@@ -71,6 +71,31 @@ function cardMaker(object) {
   const following = document.createElement("p");
   const bio = document.createElement("p");
   //create the markup hierarchy
+  card.appendChild(image);
+  card.appendChild(cardInfo);
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.appendChild(gitHubLink);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+  //add content, classes, etc to elements
+  card.classList.add("card");
+  image.src = object.avatar_url;
+  cardInfo.classList.add("card-info");
+  name.classList.add("name");
+  name.textContent = object.name;
+  username.classList.add("username");
+  username.textContent = object.login;
+  location.textContent = object.location;
+  profile.textContent = "Profile:";
+  gitHubLink.href = object.html_url;
+  gitHubLink.textContent = object.html_url;
+  followers.textContent = `Followers: ${object.followers}`;
+  following.textContent = `Following: ${object.following}`;
+  bio.textContent = `Bio: ${object.bio}`;
 }
 /*
   List of LS Instructors Github username's:
