@@ -112,11 +112,12 @@ function cardMaker(object) {
   cardInfo.appendChild(username);
   cardInfo.appendChild(location);
   cardInfo.appendChild(profile);
-  profile.appendChild(link);
-  //for some reason not appending link???????
   cardInfo.appendChild(followers);
   cardInfo.appendChild(following);
   cardInfo.appendChild(bio);
+  profile.appendChild(link);
+  //for some reason not appending link???????
+
   //add content, classes, etc to elements
   card.classList.add("card");
   image.src = object.avatar_url;
@@ -126,13 +127,14 @@ function cardMaker(object) {
   username.classList.add("username");
   username.textContent = object.login;
   location.textContent = `Location: ${object.location}`;
-  profile.textContent = "Profile:";
+  // profile.textContent = "Profile:";
   link.href = object.html_url;
   link.textContent = object.html_url;
   followers.textContent = `Followers: ${object.followers}`;
   following.textContent = `Following: ${object.following}`;
   bio.textContent = `Bio: ${object.bio}`;
-
+  // console.log("LINK", link);
+  // console.log("PROFILE", profile);
   return card;
 }
 /*
